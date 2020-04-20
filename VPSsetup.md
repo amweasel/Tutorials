@@ -12,7 +12,7 @@
       exampleuser ALL=(ALL) ALL\
     edit the ssh config -$ sudo vim /etc/ssh/ssh_config\
       PermitRootLogin no\
-    restart sshd -$ sudo systemctl restart sshd\
+    restart sshd -$ sudo systemctl restart sshd
  
 2. Log in as new user and generate ssh keys and setup the connection to local machine:\
   Commands:\
@@ -20,16 +20,16 @@
     Client -$ ssh-copy-id -i $HOME/.ssh/id_rsa.pub user@server\
     Server -$ sudo vim /etc/ssh/ssh_config\
       edit the line: PermitRootLogin no\
-    Server -$ sudo systemctl restart sshd\
+    Server -$ sudo systemctl restart sshd
 
 3. ssh using keys:\
   Commands:\
-    ssh user@server\
+    ssh user@server
 
 4. Install firewall:\
   Commands:\
     sudo pacman -S ufw\
-    sudo enable ufw\
+    sudo enable ufw
 
 5. Setup server with Nginx:\
   Commands:\
@@ -48,4 +48,4 @@
     sudo ufw allow 80\
     sudo certbot --nginx\
     sudo ufw allow 443\
-    sudo systemctl restart nginx\
+    sudo systemctl restart nginx
