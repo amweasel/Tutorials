@@ -8,6 +8,7 @@ enable and start docker with systemctl
 https://www.jenkins.io/doc/book/installing/#installing-docker
 
 create docker-compose.yml inside jenkins dir: 
+`
 version: '2'
 services:
         jenkins:
@@ -32,7 +33,7 @@ networks:
                         driver: default
                         config:
                         - subnet: 172.16.223.0/24
-
+`
 install docker-compose
 
 run sudo docker-compose up -d
@@ -41,7 +42,7 @@ create a new file in sites-available jenkins.com:
 Add an entry to the DNS zone
 Step 2 of 3
 * Fields followed by an asterisk are mandatory.
-
+`
 Sub-domain
 jenkins
 .miskify.com.
@@ -54,7 +55,7 @@ Target
 miskify.com.
 The CNAME record currently generated is as follows:
 jenkins 60 IN CNAME miskify.com.
-
+`
 then symlink
 sudo ln -s /etc/nginx/sites-available/jenkins.com /etc/nginx/sites-enabled/
 
